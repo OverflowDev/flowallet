@@ -8,8 +8,13 @@ import { ethers } from "ethers";
 
 function CreateWallet({setWallet, setSeedPhrase}) {
 
+  const addr = 'wallet_address'
+
+  
   const [phrase, setPhrase] = useState(null)
   const [loading, setLoading] = useState(false)
+
+  // const addrFromPhrase = ethers.Wallet.fromPhrase(phrase).address
 
   const navigate = useNavigate();
 
@@ -20,9 +25,18 @@ function CreateWallet({setWallet, setSeedPhrase}) {
     setLoading(false)
   }
 
+
   const setWalletAndMnemonic = () => {
     setSeedPhrase(phrase);
+
+    if(localStorage.getItem(addr) !== ethers.Wallet.fromPhrase(phrase).address) {
+      localStorage.setItem(addr, ethers.Wallet.fromPhrase(phrase).address)
+    }
+
     setWallet(ethers.Wallet.fromPhrase(phrase).address)
+
+    navigate('/')
+
   }
 
 

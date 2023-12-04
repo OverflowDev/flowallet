@@ -60,7 +60,7 @@ function MainWallet({
 //   console.log(ethers.Wallet.fromPhrase(seedPhrase))
 //   console.log(ethers.Wallet.fromPhrase(seedPhrase).privateKey)
 //   console.log(ethers.Wallet.createRandom())
-//   console.log(new ethers.Wallet('0xc4296a291c60c10939efbe468efc92ba4a9f018a5d14121d52d7a8a9ddd78722'))
+  console.log(new ethers.Wallet('0x69348f8d5c397db3319e80bcb65a9e9193cfb81d574f7050b076056eb2126365'))
 
 
   return (
@@ -124,14 +124,24 @@ function MainWallet({
 
         {/* Send and buy  */}
         <div className='flex items-center gap-4 mt-8'>
-            <Button className='w-6/12 uppercase gap-2'>
-                <Send />
-                Send
-            </Button>
-            <Button className='w-6/12 uppercase gap-2'>
-                <CreditCard />
-                Buy
-            </Button>
+            <Tooltip label="Coming Soon!!" aria-label='Coming Soon!!'>
+                <Button 
+                    className='w-6/12 uppercase gap-2'
+                    isDisabled
+                >
+                    <Send />
+                    Send
+                </Button>
+            </Tooltip>
+            <Tooltip label="Coming Soon!!" aria-label='Coming Soon!!'>
+                <Button 
+                    className='w-6/12 uppercase gap-2'
+                    isDisabled
+                >
+                    <CreditCard />
+                    Buy
+                </Button>
+            </Tooltip>
         </div>
         
         {assets ? (

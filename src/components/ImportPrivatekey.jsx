@@ -33,7 +33,8 @@ function ImportPrivatekey({setWallet, setSeedPhrase}) {
       
       setWallet(recoveredWallet.address)
       // setSeedPhrase(phrase)
-      navigate('/wallet')
+      // navigate('/wallet')
+      navigate('/')
       return
     }
     

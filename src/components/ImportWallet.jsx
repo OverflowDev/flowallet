@@ -28,25 +28,24 @@ function ImportWallet() {
 
       {/* Buttons  */}
       <div className="mt-48 space-y-8">
+            <Button 
+              onClick={() => navigate('/import_phrase')}
+              leftIcon={<WrapText />}
+              colorScheme='blue' 
+              className='gap-3 w-full'
+            >
+                Import Mnemonic phrase
+            </Button>
             <Button
-                onClick={() => {
-                    console.log('Button clicked');
-                    navigate('/import_key');
-                 }}
-                leftIcon={<Key />}
-                colorScheme='blue' 
-                className='gap-3 w-full'
+              onClick={() => {
+                  navigate('/import_key');
+                }}
+              leftIcon={<Key />}
+              colorScheme='blue' 
+              className='gap-3 w-full'
             >
                 
               Import Privatekey
-            </Button>
-            <Button 
-                onClick={() => navigate('/import_phrase')}
-                leftIcon={<WrapText />}
-                colorScheme='blue' 
-                className='gap-3 w-full'
-            >
-                Import Mnemonic phrase
             </Button>
         </div>
     </div>
