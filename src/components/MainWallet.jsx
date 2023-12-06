@@ -50,10 +50,13 @@ function MainWallet({
     },
   ]
 
+  const addr = 'wallet_address'
+
   const logout = () => {
     setSeedPhrase(null);
     setWallet(null);
     setAssets(null)
+    localStorage.removeItem(addr)
     navigate("/");
   }
 
